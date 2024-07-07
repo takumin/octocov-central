@@ -1,5 +1,5 @@
 ---
-name: CI
+name: Central Coverage Report
 on:
   schedule:
   - cron: '3 0,3,6,9 * * *'
