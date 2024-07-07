@@ -1,0 +1,30 @@
+---
+name: CI
+on:
+  schedule:
+  - cron: '3 0,3,6,9 * * *'
+  push:
+    branches:
+    - main
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+    - name: Checkout
+      uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+    - name: Setup Aqua
+      uses: ./.github/actions/setup-aqua
+    - name: Central Coverage Report (octocov)
+      uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
+      with:
+        script: |
+          toolpath = await io.which('octocov', true)
+          await exec.exec(`${toolpath}`)
+      env:
+        OCTOCOV_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

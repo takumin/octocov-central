@@ -1,15 +1,13 @@
 ---
 name: CI
 on:
-  schedule:
-  - cron: '3 0,3,6,9 * * *'
   push:
     branches:
     - main
   pull_request:
   workflow_dispatch:
 permissions:
-  contents: write
+  contents: read
 jobs:
   ci:
     name: CI
@@ -20,13 +18,5 @@ jobs:
       uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
     - name: Setup Aqua
       uses: ./.github/actions/setup-aqua
-    - name: Central Coverage Report (octocov)
-      uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
-      with:
-        script: |
-          toolpath = await io.which('octocov', true)
-          await exec.exec(`${toolpath}`)
-      env:
-        OCTOCOV_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Running Maintenance Task
       run: task
