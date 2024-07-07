@@ -1,0 +1,16 @@
+---
+name: Setup Aqua
+description: Setup Aqua by using cache
+runs:
+  using: composite
+  steps:
+  - name: Aqua Tools Cache
+    uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
+    with:
+      path: ~/.local/share/aquaproj-aqua
+      key: aqua-tools-${{runner.os}}-${{runner.arch}}-${{hashFiles('.aqua.yaml')}}
+  - name: Setup Aqua
+    uses: aquaproj/aqua-installer@6ce1f8848ec8e61f14d57bd5d7597057a6dd187c # v3.0.1
+    with:
+      aqua_version: v2.29.0
+      aqua_opts: -a
