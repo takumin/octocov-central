@@ -1,6 +1,9 @@
 ---
 name: Renovate Config Validator
 on:
+  push:
+    branches:
+    - main
   pull_request:
     paths:
     - '.github/workflows/renovate-config-validator.yml'

@@ -1,6 +1,9 @@
 ---
-name: Check Pull Request
+name: Integration Maintenance Task
 on:
+  push:
+    branches:
+    - main
   pull_request:
 permissions:
   contents: read
