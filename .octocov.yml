@@ -1,0 +1,10 @@
+---
+central:
+  reports:
+    datastores:
+    - artifact://takumin/boilerplate-golang-cli
+  badges:
+    datastores:
+    - local://badges
+  push:
+    enable: true
