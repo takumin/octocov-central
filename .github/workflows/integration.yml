@@ -1,5 +1,5 @@
 ---
-name: Central Coverage Report
+name: CI
 on:
   schedule:
   - cron: '3 0,3,6,9 * * *'
@@ -28,3 +28,5 @@ jobs:
           await exec.exec(`${toolpath}`)
       env:
         OCTOCOV_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Running Maintenance Task
+      run: task
