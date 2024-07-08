@@ -1,0 +1,95 @@
+---
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    silent: true
+    deps:
+    - aqua
+    - pinact
+    - yamlfmt
+    - editorconfig
+    - actionlint
+    - ghalint
+
+  aqua:
+    run: once
+    sources:
+    - .aqua.yaml
+    generates:
+    - .task/.done_{{.TASK}}
+    cmds:
+    - aqua install --all
+    - cmd: touch .task/.done_{{.TASK}}
+      silent: true
+
+  pinact:
+    run: once
+    deps: [aqua]
+    sources:
+    - '.github/**/*.yml'
+    - '.github/**/*.yaml'
+    generates:
+    - .task/.done_{{.TASK}}
+    cmds:
+    - pinact run
+    - cmd: touch .task/.done_{{.TASK}}
+      silent: true
+
+  yamlfmt:
+    run: once
+    deps: [aqua]
+    sources:
+    - '**/*.yml'
+    - '**/*.yaml'
+    - exclude: '.git/**/*'
+    - exclude: '.task/**/*'
+    generates:
+    - .task/.done_{{.TASK}}
+    cmds:
+    - yamlfmt .
+    - cmd: touch .task/.done_{{.TASK}}
+      silent: true
+
+  editorconfig:
+    run: once
+    deps: [aqua]
+    sources:
+    - '**/*'
+    - exclude: '.git/**/*'
+    - exclude: '.task/**/*'
+    generates:
+    - .task/.done_{{.TASK}}
+    cmds:
+    - ec
+    - cmd: touch .task/.done_{{.TASK}}
+      silent: true
+
+  actionlint:
+    run: once
+    deps: [aqua]
+    sources:
+    - '.github/**/*.yml'
+    - '.github/**/*.yaml'
+    generates:
+    - .task/.done_{{.TASK}}
+    cmds:
+    - actionlint
+    - cmd: touch .task/.done_{{.TASK}}
+      silent: true
+
+  ghalint:
+    run: once
+    deps: [pinact]
+    sources:
+    - '.github/**/*.yml'
+    - '.github/**/*.yaml'
+    generates:
+    - .task/.done_{{.TASK}}
+    cmds:
+    - ghalint run
+    - ghalint act
+    - cmd: touch .task/.done_{{.TASK}}
+      silent: true
