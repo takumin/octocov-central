@@ -13,6 +13,8 @@ tasks:
     - editorconfig
     - actionlint
     - ghalint
+    - shfmt
+    - shellcheck
 
   aqua:
     run: once
@@ -91,5 +93,36 @@ tasks:
     cmds:
     - ghalint run
     - ghalint act
+    - cmd: touch .task/.done_{{.TASK}}
+      silent: true
+
+  shfmt:
+    run: once
+    deps: [aqua]
+    sources:
+    - '**/*.sh'
+    - '**/*.bash'
+    - exclude: '.git/**/*'
+    - exclude: '.task/**/*'
+    generates:
+    - .task/.done_{{.TASK}}
+    cmds:
+    - shfmt -w .
+    - cmd: touch .task/.done_{{.TASK}}
+      silent: true
+
+  shellcheck:
+    run: once
+    deps: [aqua]
+    sources:
+    - '**/*.sh'
+    - '**/*.bash'
+    - exclude: '.git/**/*'
+    - exclude: '.task/**/*'
+    generates:
+    - .task/.done_{{.TASK}}
+    cmds:
+    - for: sources
+      cmd: shellcheck '{{.ITEM}}'
     - cmd: touch .task/.done_{{.TASK}}
       silent: true
