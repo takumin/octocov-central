@@ -24,18 +24,8 @@ jobs:
       uses: actions/create-github-app-token@31c86eb3b33c9b601a1f60f98dcbfd1d70f379b4 # v1.10.3
       id: app-token
       with:
-        # required
         app-id: ${{ secrets.APP_ID }}
         private-key: ${{ secrets.PRIVATE_KEY }}
-    - name: Get GitHub App User ID
-      id: get-user-id
-      run: echo "user-id=$(gh api "/users/${{ steps.app-token.outputs.app-slug }}[bot]" --jq .id)" >> "$GITHUB_OUTPUT"
-      env:
-        GH_TOKEN: ${{ steps.app-token.outputs.token }}
-    - name: Set Git Global Config
-      run: |
-        git config --global user.name '${{ steps.app-token.outputs.app-slug }}[bot]'
-        git config --global user.email '${{ steps.get-user-id.outputs.user-id }}+${{ steps.app-token.outputs.app-slug }}[bot]@users.noreply.github.com>'
     - name: Central Coverage Report (octocov)
       uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
       with:
