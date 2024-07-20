@@ -15,5 +15,11 @@ space_redirects    = true
 binary_next_line   = true
 function_next_line = true
 
+[*.go]
+indent_style = tab
+
+[go.{mod,sum}]
+indent_style = unset
+
 [{LICENSE,*.md}]
 indent_style = unset
