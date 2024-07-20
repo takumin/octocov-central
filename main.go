@@ -140,7 +140,7 @@ func rewriteOctocovYaml(repos []*github.Repository, dryRun bool) error {
 		return goerr.Wrap(err, "failed marshal octocov map")
 	}
 
-	slog.Info("rewrite octocov", slog.Any("data", string(rewriteYaml)))
+	slog.Info("rewrite octocov", slog.Any("datastores", dataStores))
 	if !dryRun {
 		err := os.WriteFile(".octocov.yml", rewriteYaml, 0644) // #nosec G306
 		if err != nil {
