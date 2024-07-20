@@ -8,3 +8,6 @@ central:
   reports:
     datastores:
     - artifact://takumin/boilerplate-golang-cli
+    - artifact://takumin/dogowner
+    - artifact://takumin/go-hcl-playground
+    - artifact://takumin/octocov-central
