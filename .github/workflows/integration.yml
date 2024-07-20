@@ -24,3 +24,5 @@ jobs:
       uses: ./.github/actions/setup-aqua
     - name: Running Maintenance Task
       run: task
+    - name: Rewrite DataStores
+      run: task rewrite
