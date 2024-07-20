@@ -8,6 +8,7 @@ import (
 	"os"
 	"os/exec"
 	"regexp"
+	"sort"
 	"strings"
 	"sync"
 
@@ -133,6 +134,7 @@ func rewriteOctocovYaml(repos []*github.Repository, dryRun bool) error {
 	for _, repo := range repos {
 		dataStores = append(dataStores, fmt.Sprintf("artifact://%s", repo.GetFullName()))
 	}
+	sort.Strings(dataStores)
 	octocovMap["central"].(map[string]interface{})["reports"].(map[string]interface{})["datastores"] = dataStores
 
 	rewriteYaml, err := yaml.Marshal(octocovMap)
