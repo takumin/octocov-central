@@ -15,6 +15,8 @@ tasks:
     - ghalint
     - shfmt
     - shellcheck
+    - gosec
+    - staticcheck
 
   aqua:
     run: once
@@ -124,5 +126,39 @@ tasks:
     cmds:
     - for: sources
       cmd: shellcheck '{{.ITEM}}'
+    - cmd: touch .task/.done_{{.TASK}}
+      silent: true
+
+  gosec:
+    run: once
+    deps: [aqua]
+    sources:
+    - 'go.work'
+    - '**/go.mod'
+    - '**/go.sum'
+    - '**/*.go'
+    - exclude: '.git/**/*'
+    - exclude: '.task/**/*'
+    generates:
+    - .task/.done_{{.TASK}}
+    cmds:
+    - gosec -quiet ./...
+    - cmd: touch .task/.done_{{.TASK}}
+      silent: true
+
+  staticcheck:
+    run: once
+    deps: [aqua]
+    sources:
+    - 'go.work'
+    - '**/go.mod'
+    - '**/go.sum'
+    - '**/*.go'
+    - exclude: '.git/**/*'
+    - exclude: '.task/**/*'
+    generates:
+    - .task/.done_{{.TASK}}
+    cmds:
+    - staticcheck ./...
     - cmd: touch .task/.done_{{.TASK}}
       silent: true
