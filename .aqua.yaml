@@ -5,7 +5,7 @@ registries:
 - type: standard
   ref: v4.221.0 # renovate: depName=aquaproj/aqua-registry
 packages:
-- name: go-task/task@v3.39.1
+- name: go-task/task@v3.39.2
 - name: editorconfig-checker/editorconfig-checker@v3.0.3
 - name: rhysd/actionlint@v1.7.1
 - name: suzuki-shunsuke/ghalint@v0.2.12
