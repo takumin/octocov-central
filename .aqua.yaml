@@ -7,7 +7,7 @@ registries:
 packages:
 - name: go-task/task@v3.39.2
 - name: editorconfig-checker/editorconfig-checker@v3.0.3
-- name: rhysd/actionlint@v1.7.2
+- name: rhysd/actionlint@v1.7.3
 - name: suzuki-shunsuke/ghalint@v0.2.12
 - name: suzuki-shunsuke/pinact@v0.2.1
 - name: google/yamlfmt@v0.13.0
