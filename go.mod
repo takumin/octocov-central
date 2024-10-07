@@ -4,7 +4,7 @@ go 1.22.5
 
 require (
 	github.com/gofri/go-github-ratelimit v1.1.0
-	github.com/google/go-github/v63 v63.0.0
+	github.com/google/go-github/v66 v66.0.0
 	github.com/google/go-github/v66 v66.0.0
 	github.com/m-mizutani/goerr v0.1.14
 	golang.org/x/sync v0.8.0
