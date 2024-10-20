@@ -16,6 +16,8 @@ github.com/m-mizutani/goerr v0.1.13 h1:ApBRJ6vUkKEpB6IJX8ov0E0EK1yk4SWltHlUQaCLL
 github.com/m-mizutani/goerr v0.1.13/go.mod h1:OoNepSLW5oF3dQWWZ3D2lVOTbzRsePvc6LrqhXcff5Y=
 github.com/m-mizutani/goerr v0.1.14 h1:qwJ4wGoZWiHOGX/CJFvQyLRXK49EVyhOcVKAqxS/w5Q=
 github.com/m-mizutani/goerr v0.1.14/go.mod h1:OoNepSLW5oF3dQWWZ3D2lVOTbzRsePvc6LrqhXcff5Y=
+github.com/m-mizutani/goerr v0.2.0 h1:/IcnAm0TwIhq6AI0Ch50dszDVkkPpDXbwXIf/31BOHE=
+github.com/m-mizutani/goerr v0.2.0/go.mod h1:OoNepSLW5oF3dQWWZ3D2lVOTbzRsePvc6LrqhXcff5Y=
 golang.org/x/sync v0.7.0 h1:YsImfSBoP9QPYL0xyKJPq0gcaJdG3rInoqxTWbfQu9M=
 golang.org/x/sync v0.7.0/go.mod h1:Czt+wKu1gCyEFDUtn0jG5QVvpJ6rzVqr5aXyt9drQfk=
 golang.org/x/sync v0.8.0 h1:3NFvSEYkUoMifnESzZl15y791HH1qU2xm6eCJU5ZPXQ=
