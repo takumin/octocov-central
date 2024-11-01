@@ -10,7 +10,7 @@ packages:
 - name: rhysd/actionlint@v1.7.3
 - name: suzuki-shunsuke/ghalint@v1.0.0
 - name: suzuki-shunsuke/pinact@v1.0.0
-- name: google/yamlfmt@v0.13.0
+- name: google/yamlfmt@v0.14.0
 - name: k1LoW/octocov@v0.62.1
 - name: koalaman/shellcheck@v0.10.0
 - name: mvdan/sh@v3.10.0
