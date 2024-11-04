@@ -13,7 +13,7 @@ import (
 	"sync"
 
 	"github.com/gofri/go-github-ratelimit/github_ratelimit"
-	"github.com/google/go-github/v63/github"
+	"github.com/google/go-github/v66/github"
 	"github.com/m-mizutani/goerr"
 	"golang.org/x/sync/errgroup"
 	"gopkg.in/yaml.v3"
