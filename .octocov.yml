@@ -10,3 +10,4 @@ central:
     - artifact://takumin/boilerplate-golang-cli
     - artifact://takumin/dogowner
     - artifact://takumin/octocov-central
+    - artifact://takumin/path-filter-action
