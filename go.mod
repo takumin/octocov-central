@@ -7,7 +7,7 @@ require (
 	github.com/google/go-github/v66 v66.0.0
 	github.com/google/go-github/v68 v68.0.0
 	github.com/m-mizutani/goerr v1.0.0
-	golang.org/x/sync v0.10.0
+	golang.org/x/sync v0.11.0
 	gopkg.in/yaml.v3 v3.0.1
 )
 
