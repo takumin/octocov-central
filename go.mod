@@ -5,7 +5,7 @@ go 1.23.1
 toolchain go1.24.1
 
 require (
-	github.com/gofri/go-github-ratelimit v1.1.1
+	github.com/gofri/go-github-ratelimit/v2 v2.0.1
 	github.com/gofri/go-github-ratelimit/v2 v2.0.1
 	github.com/google/go-github/v66 v66.0.0
 	github.com/google/go-github/v69 v69.2.0
