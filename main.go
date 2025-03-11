@@ -191,10 +191,18 @@ func main() {
 
 	rateLimiter := github_ratelimit.New(nil,
 		github_primary_ratelimit.WithLimitDetectedCallback(func(ctx *github_primary_ratelimit.CallbackContext) {
-			fmt.Printf("Primary rate limit detected: category %s, reset time: %v\n", ctx.Category, ctx.ResetTime)
+			slog.Info(
+				"primary rate limit detected",
+				slog.String("category", string(ctx.Category)),
+				slog.String("reset time", ctx.ResetTime.String()),
+			)
 		}),
 		github_secondary_ratelimit.WithLimitDetectedCallback(func(ctx *github_secondary_ratelimit.CallbackContext) {
-			fmt.Printf("Secondary rate limit detected: reset time: %v, total sleep time: %v\n", ctx.ResetTime, ctx.TotalSleepTime)
+			slog.Info(
+				"secondary rate limit detected",
+				slog.String("reset time", ctx.ResetTime.String()),
+				slog.String("total sleep time", ctx.TotalSleepTime.String()),
+			)
 		}),
 	)
 
