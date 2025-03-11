@@ -12,8 +12,11 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/gofri/go-github-ratelimit/github_ratelimit"
-	"github.com/google/go-github/v66/github"
+	"github.com/gofri/go-github-pagination/githubpagination"
+	"github.com/gofri/go-github-ratelimit/v2/github_ratelimit"
+	"github.com/gofri/go-github-ratelimit/v2/github_ratelimit/github_primary_ratelimit"
+	"github.com/gofri/go-github-ratelimit/v2/github_ratelimit/github_secondary_ratelimit"
+	"github.com/google/go-github/v69/github"
 	"github.com/m-mizutani/goerr"
 	"golang.org/x/sync/errgroup"
 	"gopkg.in/yaml.v3"
@@ -186,22 +189,20 @@ func main() {
 		os.Exit(1)
 	}
 
-	rateLimitter, err := github_ratelimit.NewRateLimitWaiterClient(
-		nil,
-		github_ratelimit.WithLimitDetectedCallback(func(callbackCtx *github_ratelimit.CallbackContext) {
-			slog.Info(
-				"detected rate limit",
-				slog.String("sleep_until", callbackCtx.SleepUntil.String()),
-				slog.String("total_sleep_time", callbackCtx.TotalSleepTime.String()),
-			)
+	rateLimiter := github_ratelimit.New(nil,
+		github_primary_ratelimit.WithLimitDetectedCallback(func(ctx *github_primary_ratelimit.CallbackContext) {
+			fmt.Printf("Primary rate limit detected: category %s, reset time: %v\n", ctx.Category, ctx.ResetTime)
+		}),
+		github_secondary_ratelimit.WithLimitDetectedCallback(func(ctx *github_secondary_ratelimit.CallbackContext) {
+			fmt.Printf("Secondary rate limit detected: reset time: %v, total sleep time: %v\n", ctx.ResetTime, ctx.TotalSleepTime)
 		}),
 	)
-	if err != nil {
-		slog.Error("failed github ratelimit client", slog.Any("error", err))
-		os.Exit(1)
-	}
 
-	client := github.NewClient(rateLimitter).WithAuthToken(token)
+	paginator := githubpagination.NewClient(rateLimiter,
+		githubpagination.WithPerPage(100),
+	)
+
+	client := github.NewClient(paginator).WithAuthToken(token)
 
 	username, err := canonicalUsername(ctx, client, rawUsername)
 	if err != nil {
