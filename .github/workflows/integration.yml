@@ -46,8 +46,10 @@ jobs:
       run: |-
         git config --global user.name "github-actions"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git remote set-url origin "https://x-access-token:${{ steps.app-token.outputs.token }}@github.com/${{ github.repository }}"
+        git remote set-url origin "https://x-access-token:${APP_TOKEN}@github.com/${{ github.repository }}"
         git commit -am "Update datastores" && git push || exit 0
+      env:
+        APP_TOKEN: ${{ steps.app-token.outputs.token }}
     - name: Central Coverage Report (octocov)
       if: github.ref == 'refs/heads/main'
       uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7.0.1
