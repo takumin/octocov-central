@@ -3,7 +3,7 @@ module github.com/takumin/octocov-central
 go 1.24.1
 
 require (
-	github.com/gofri/go-github-pagination v1.0.0
+	github.com/gofri/go-github-pagination v1.0.1
 	github.com/gofri/go-github-ratelimit/v2 v2.0.1
 	github.com/google/go-github/v69 v69.2.0
 	github.com/m-mizutani/goerr v1.0.0
