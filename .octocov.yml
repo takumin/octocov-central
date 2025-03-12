@@ -9,4 +9,3 @@ central:
     datastores:
     - artifact://takumin/boilerplate-golang-cli
     - artifact://takumin/octocov-central
-    - artifact://takumin/path-action
