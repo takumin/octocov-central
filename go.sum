@@ -4,6 +4,8 @@ github.com/gofri/go-github-pagination v1.0.1 h1:j5uJRx65i/Ta2M0QSgiPcyokY69JnCQg
 github.com/gofri/go-github-pagination v1.0.1/go.mod h1:Qij55Fb4fNPjam3SB+8cLnqp4pgR8RGMyIspYXcyHX0=
 github.com/gofri/go-github-ratelimit/v2 v2.0.1 h1:jhd3iZ2XINscvYGL+kNXZosr70IZyDITZZC+MznthLI=
 github.com/gofri/go-github-ratelimit/v2 v2.0.1/go.mod h1:nqGxwHNwqXx5GNRaEEhegUOvMLAx51BOJtN8eFi8FEA=
+github.com/gofri/go-github-ratelimit/v2 v2.0.2 h1:gS8wAS1jTmlWGdTjAM7KIpsLjwY1S0S/gKK5hthfSXM=
+github.com/gofri/go-github-ratelimit/v2 v2.0.2/go.mod h1:YBQt4gTbdcbMjJFT05YFEaECwH78P5b0IwrnbLiHGdE=
 github.com/google/go-cmp v0.5.2/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/go-cmp v0.6.0 h1:ofyhxvXcZhMsU5ulbFiLKl/XBFqE1GSq7atu8tAmTRI=
 github.com/google/go-cmp v0.6.0/go.mod h1:17dUlkBOakJ0+DkrSSNjCkIjxS6bF9zb3elmeNGIjoY=
