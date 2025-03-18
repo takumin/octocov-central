@@ -6,6 +6,7 @@ require (
 	github.com/gofri/go-github-pagination v1.0.1
 	github.com/gofri/go-github-ratelimit/v2 v2.0.2
 	github.com/google/go-github/v69 v69.2.0
+	github.com/google/go-github/v70 v70.0.0
 	github.com/m-mizutani/goerr v1.0.0
 	golang.org/x/sync v0.12.0
 	gopkg.in/yaml.v3 v3.0.1
