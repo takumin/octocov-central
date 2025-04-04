@@ -14,5 +14,5 @@ packages:
 - name: k1LoW/octocov@v0.65.1
 - name: koalaman/shellcheck@v0.10.0
 - name: mvdan/sh@v3.11.0
-- name: securego/gosec@v2.22.2
+- name: securego/gosec@v2.22.3
 - name: dominikh/go-tools/staticcheck@2025.1.1
