@@ -8,5 +8,4 @@ central:
   reports:
     datastores:
     - artifact://takumin/boilerplate-golang-cli
-    - artifact://takumin/filter-action
     - artifact://takumin/octocov-central
