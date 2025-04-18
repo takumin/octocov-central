@@ -11,7 +11,7 @@ packages:
 - name: suzuki-shunsuke/ghalint@v1.2.4
 - name: suzuki-shunsuke/pinact@v2.2.1
 - name: google/yamlfmt@v0.16.0
-- name: k1LoW/octocov@v0.65.2
+- name: k1LoW/octocov@v0.66.0
 - name: koalaman/shellcheck@v0.10.0
 - name: mvdan/sh@v3.11.0
 - name: securego/gosec@v2.22.3
