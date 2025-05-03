@@ -80,7 +80,7 @@ tasks:
     generates:
     - .task/.done_{{.TASK}}
     cmds:
-    - actionlint
+    - actionlint -shellcheck shellcheck
     - cmd: touch .task/.done_{{.TASK}}
       silent: true
 
