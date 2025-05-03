@@ -16,7 +16,7 @@ tasks:
     - task: shfmt
     - task: shellcheck
     - task: gosec
-    - task: staticcheck
+    - task: golangci-lint
 
   aqua:
     run: once
@@ -146,7 +146,7 @@ tasks:
     - cmd: touch .task/.done_{{.TASK}}
       silent: true
 
-  staticcheck:
+  golangci-lint:
     run: once
     deps: [aqua]
     sources:
@@ -159,7 +159,7 @@ tasks:
     generates:
     - .task/.done_{{.TASK}}
     cmds:
-    - staticcheck ./...
+    - golangci-lint run ./...
     - cmd: touch .task/.done_{{.TASK}}
       silent: true
 

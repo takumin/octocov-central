@@ -16,4 +16,4 @@ packages:
 - name: koalaman/shellcheck@v0.10.0
 - name: mvdan/sh@v3.11.0
 - name: securego/gosec@v2.22.3
-- name: dominikh/go-tools/staticcheck@2025.1.1
+- name: golangci/golangci-lint@v2.1.5
