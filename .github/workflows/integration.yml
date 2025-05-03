@@ -21,7 +21,10 @@ jobs:
       with:
         persist-credentials: false
     - name: Setup Aqua
-      uses: ./.github/actions/setup-aqua
+      uses: aquaproj/aqua-installer@5e54e5cee8a95ee2ce7c04cb993da6dfad13e59c # v3.1.2
+      with:
+        aqua_version: v2.50.1
+        aqua_opts: -a
     - name: Running Maintenance Task
       run: task
     - name: Rewrite DataStores
