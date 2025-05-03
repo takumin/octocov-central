@@ -16,7 +16,7 @@ import (
 	"github.com/gofri/go-github-ratelimit/v2/github_ratelimit"
 	"github.com/gofri/go-github-ratelimit/v2/github_ratelimit/github_primary_ratelimit"
 	"github.com/gofri/go-github-ratelimit/v2/github_ratelimit/github_secondary_ratelimit"
-	"github.com/google/go-github/v69/github"
+	"github.com/google/go-github/v71/github"
 	"github.com/m-mizutani/goerr"
 	"golang.org/x/sync/errgroup"
 	"gopkg.in/yaml.v3"
