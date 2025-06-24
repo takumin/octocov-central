@@ -5,7 +5,7 @@ go 1.24.4
 require (
 	github.com/gofri/go-github-pagination v1.0.1
 	github.com/gofri/go-github-ratelimit/v2 v2.0.2
-	github.com/google/go-github/v72 v72.0.0
+	github.com/google/go-github/v73 v73.0.0
 	github.com/m-mizutani/goerr v1.0.0
 	golang.org/x/sync v0.15.0
 	gopkg.in/yaml.v3 v3.0.1
