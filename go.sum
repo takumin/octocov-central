@@ -9,10 +9,8 @@ github.com/google/go-github/v74 v74.0.0 h1:yZcddTUn8DPbj11GxnMrNiAnXH14gNs559AsU
 github.com/google/go-github/v74 v74.0.0/go.mod h1:ubn/YdyftV80VPSI26nSJvaEsTOnsjrxG3o9kJhcyak=
 github.com/google/go-querystring v1.1.0 h1:AnCroh3fv4ZBgVIf1Iwtovgjaw/GiKJo8M8yD/fhyJ8=
 github.com/google/go-querystring v1.1.0/go.mod h1:Kcdr2DB4koayq7X8pmAG4sNG59So17icRSOU623lUBU=
-github.com/google/uuid v1.6.0 h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=
-github.com/google/uuid v1.6.0/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
-github.com/m-mizutani/goerr v1.0.0 h1:Qugt5SOgewtoE10r7of83ngbL9glRt+vSIxHcKfIfjo=
-github.com/m-mizutani/goerr v1.0.0/go.mod h1:OoNepSLW5oF3dQWWZ3D2lVOTbzRsePvc6LrqhXcff5Y=
+github.com/m-mizutani/goerr/v2 v2.0.0 h1:kbsQ1EuVsd/cd/bzmt4C9+Rau/s3ATPW4wjEgx/PAOs=
+github.com/m-mizutani/goerr/v2 v2.0.0/go.mod h1:Ax59zs+j3NmzB/mPLc1w3g4yIutdrwcY7cB6IRO18EU=
 golang.org/x/sync v0.17.0 h1:l60nONMj9l5drqw6jlhIELNv9I0A4OFgRsG9k2oT9Ug=
 golang.org/x/sync v0.17.0/go.mod h1:9KTHXmSnoGruLpwFjVSX0lNNA75CykiMECbovNTZqGI=
 golang.org/x/xerrors v0.0.0-20191204190536-9bdfabe68543/go.mod h1:I/5z698sn9Ka8TeJc9MKroUUfqBBauWjQqLJ2OPfmY0=
