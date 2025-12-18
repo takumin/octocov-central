@@ -6,7 +6,7 @@ registries:
   ref: v4.446.0 # renovate: depName=aquaproj/aqua-registry
 packages:
 - name: golang/go@go1.25.5
-- name: go-task/task@v3.46.1
+- name: go-task/task@v3.46.2
 - name: editorconfig-checker/editorconfig-checker@v3.6.0
 - name: rhysd/actionlint@v1.7.9
 - name: suzuki-shunsuke/ghalint@v1.5.4
