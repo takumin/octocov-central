@@ -10,7 +10,7 @@ packages:
 - name: editorconfig-checker/editorconfig-checker@v3.6.1
 - name: rhysd/actionlint@v1.7.10
 - name: suzuki-shunsuke/ghalint@v1.5.5
-- name: suzuki-shunsuke/pinact@v3.8.0
+- name: suzuki-shunsuke/pinact@v3.9.0
 - name: google/yamlfmt@v0.21.0
 - name: k1LoW/octocov@v0.74.3
 - name: koalaman/shellcheck@v0.11.0
