@@ -16,7 +16,7 @@ import (
 	"github.com/gofri/go-github-ratelimit/v2/github_ratelimit"
 	"github.com/gofri/go-github-ratelimit/v2/github_ratelimit/github_primary_ratelimit"
 	"github.com/gofri/go-github-ratelimit/v2/github_ratelimit/github_secondary_ratelimit"
-	"github.com/google/go-github/v86/github"
+	"github.com/google/go-github/v89/github"
 	"github.com/m-mizutani/goerr/v2"
 	"golang.org/x/sync/errgroup"
 	"gopkg.in/yaml.v3"
@@ -210,7 +210,14 @@ func main() {
 		githubpagination.WithPerPage(100),
 	)
 
-	client := github.NewClient(paginator).WithAuthToken(token)
+	client, err := github.NewClient(
+		github.WithHTTPClient(paginator),
+		github.WithAuthToken(token),
+	)
+	if err != nil {
+		slog.Error("failed create github client", slog.Any("error", err))
+		os.Exit(1)
+	}
 
 	username, err := canonicalUsername(ctx, client, rawUsername)
 	if err != nil {
