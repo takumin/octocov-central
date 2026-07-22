@@ -4,7 +4,7 @@ central:
     datastores:
     - local://badges
   push:
-    enable: true
+    enable: false
   reports:
     datastores:
     - artifact://takumin/boilerplate-golang-cli
