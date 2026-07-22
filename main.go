@@ -210,7 +210,14 @@ func main() {
 		githubpagination.WithPerPage(100),
 	)
 
-	client := github.NewClient(paginator).WithAuthToken(token)
+	client, err := github.NewClient(
+		github.WithHTTPClient(paginator),
+		github.WithAuthToken(token),
+	)
+	if err != nil {
+		slog.Error("failed create github client", slog.Any("error", err))
+		os.Exit(1)
+	}
 
 	username, err := canonicalUsername(ctx, client, rawUsername)
 	if err != nil {
