@@ -41,15 +41,6 @@ jobs:
         app-id: ${{ secrets.APP_ID }}
         private-key: ${{ secrets.PRIVATE_KEY }}
         permission-contents: write
-    - name: Commit and Push
-      if: github.ref == 'refs/heads/main'
-      run: |-
-        git config --global user.name "github-actions"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git remote set-url origin "https://x-access-token:${APP_TOKEN}@github.com/${{ github.repository }}"
-        git commit -am "Update datastores" && git push || exit 0
-      env:
-        APP_TOKEN: ${{ steps.app-token.outputs.token }}
     - name: Central Coverage Report (octocov)
       if: github.ref == 'refs/heads/main'
       uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
@@ -59,3 +50,23 @@ jobs:
           await exec.exec(`${toolpath}`)
       env:
         OCTOCOV_GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+    - name: Commit changes (verified)
+      if: github.ref == 'refs/heads/main'
+      run: |
+        set -euo pipefail
+        args=()
+        while IFS= read -r -d '' line; do
+          path="${line:3}"
+          if [[ "${line:0:2}" == *D* ]]; then
+            args+=(--delete "${path}")
+          else
+            args+=(--add "${path}")
+          fi
+        done < <(git status -z --porcelain=v1 --no-renames --untracked-files=all -- .octocov.yml README.md badges)
+        if [ "${#args[@]}" -eq 0 ]; then
+          echo "No changes to commit"
+          exit 0
+        fi
+        ghcommit --repository "${GITHUB_REPOSITORY}" --branch "${GITHUB_REF_NAME}" --message "Update by octocov" "${args[@]}"
+      env:
+        GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}

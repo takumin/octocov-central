@@ -13,6 +13,7 @@ packages:
 - name: suzuki-shunsuke/pinact@v4.1.0
 - name: google/yamlfmt@v0.21.0
 - name: k1LoW/octocov@v0.75.10
+- name: planetscale/ghcommit@v0.1.78
 - name: koalaman/shellcheck@v0.11.0
 - name: mvdan/sh@v3.13.1
 - name: securego/gosec@v2.28.0
