@@ -16,5 +16,5 @@ packages:
 - name: planetscale/ghcommit@v0.1.78
 - name: koalaman/shellcheck@v0.11.0
 - name: mvdan/sh@v3.13.1
-- name: securego/gosec@v2.28.0
+- name: securego/gosec@v2.29.0
 - name: golangci/golangci-lint@v2.13.1
