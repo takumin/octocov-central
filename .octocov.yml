@@ -6,5 +6,6 @@ central:
   reports:
     datastores:
     - artifact://takumin/boilerplate-golang-cli
+    - artifact://takumin/libreelec-repacker
     - artifact://takumin/octocov-central
     - artifact://takumin/rsdebstrap
