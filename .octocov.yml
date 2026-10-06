@@ -7,5 +7,6 @@ central:
     datastores:
     - artifact://takumin/aptutil
     - artifact://takumin/boilerplate-golang-cli
+    - artifact://takumin/manaita
     - artifact://takumin/octocov-central
     - artifact://takumin/rsdebstrap
