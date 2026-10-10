@@ -5,6 +5,7 @@ central:
     - local://badges
   reports:
     datastores:
+    - artifact://takumin/ajimi
     - artifact://takumin/aptutil
     - artifact://takumin/boilerplate-golang-cli
     - artifact://takumin/manaita
