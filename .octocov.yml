@@ -10,3 +10,4 @@ central:
     - artifact://takumin/manaita
     - artifact://takumin/octocov-central
     - artifact://takumin/rsdebstrap
+    - artifact://takumin/seednet
