@@ -1,6 +1,6 @@
 module github.com/takumin/octocov-central
 
-go 1.27.3
+go 1.27.4
 
 require (
 	github.com/gofri/go-github-pagination v1.0.1
